@@ -594,7 +594,7 @@ npm run dev
 ## Project Structure
 
 ```
-src/
+src/app
 ├── modules/
 │   ├── auth/           # Authentication controllers and routes
 │   ├── user/           # User management controllers and routes
@@ -603,7 +603,9 @@ src/
 ├── middlewares/        # Custom middleware functions
 ├── config/             # Configuration files
 ├── utils/              # Utility functions
-├── models/             # Mongoose models
+├── errorHelpers/       # Global error handling
+├── routes/             # Handle all the relavent routes
+├── interfaces/         # Set global interfaces
 ├── app.ts              # Express app configuration
 └── server.ts           # Server entry point
 ```
