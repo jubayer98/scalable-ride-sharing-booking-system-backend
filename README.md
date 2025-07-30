@@ -529,8 +529,8 @@ GET /api/v1/user/report
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/your-username/ride-booking-api.git
-cd ride-booking-api
+git clone https://github.com/jubayer98/scalable-ride-sharing-booking-system-backend.git
+cd scalable-ride-sharing-booking-system-backend
 ```
 
 ### Install Dependencies
@@ -572,9 +572,6 @@ SMTP_FROM=<your-email@gmail.com>
 ```bash
 # Development mode
 npm run dev
-
-# Production mode
-npm start
 ```
 
 ## Usage
