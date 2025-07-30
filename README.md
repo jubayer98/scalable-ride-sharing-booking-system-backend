@@ -543,21 +543,29 @@ Create a `.env` file in the root directory and add the following environment var
 
 ```env
 PORT=4000
+DB_URL=mongodb+srv://<USERNAME>:<PASSWORD>@<CLUSTER_URL>/<DB_NAME>?retryWrites=true&w=majority&appName=<APP_NAME>
 NODE_ENV=development
-
-# Database
-MONGODB_URI=mongodb://localhost:27017/ride-booking
+FRONTEND_URL=https://<your-frontend-url>.com
 
 # JWT
-JWT_ACCESS_SECRET=your_jwt_access_secret
-JWT_REFRESH_SECRET=your_jwt_refresh_secret
-JWT_ACCESS_EXPIRES_IN=15m
-JWT_REFRESH_EXPIRES_IN=7d
+JWT_ACCESS_SECRET=<ACCESS_SECRET>
+JWT_ACCESS_EXPIRATION=1d
+JWT_REFRESH_SECRET=<REFRESH_SECRET>
+JWT_REFRESH_EXPIRATION=7d
 
-# Email
-EMAIL_SERVICE=gmail
-EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_email_password
+# BCRYPT
+BCRYPT_SALT_ROUNDS=10
+
+# INITIAL ADMIN
+INITIAL_ADMIN_EMAIL=<admin-email@example.com>
+INITIAL_ADMIN_PASSWORD=<AdminPassword123>
+
+# SMTP
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_USER=<your-email@gmail.com>
+SMTP_PASS=<your-app-password>
+SMTP_FROM=<your-email@gmail.com>
 ```
 
 ### Run the Application
