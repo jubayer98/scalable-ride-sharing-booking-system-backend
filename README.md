@@ -574,22 +574,84 @@ SMTP_FROM=<your-email@gmail.com>
 npm run dev
 ```
 
+Here's the updated **Usage** section that includes **Postman testing instructions** and a clear explanation for **`setAuthCookie` usage in production (Vercel) and localhost environments**:
+
+---
+
 ## Usage
 
 ### Testing with Postman
-1. Import the provided Postman collection
-2. Set up environment variables for base URL and authentication tokens
+
+1. Import the provided Postman collection.
+2. Set up environment variables for:
+
+   * `baseURL` (e.g., `http://localhost:4000` or your Vercel deployment URL)
+   * `accessToken` and `refreshToken` (after login)
 3. Follow the API flow:
-   - Register a new user
-   - Login to get access and refresh tokens
-   - Use the access token in the Authorization header for protected routes
-   - Explore different endpoints based on user roles
+
+   * Register a new user
+   * Login to get access and refresh tokens
+   * Use the access token in the Authorization header for protected routes
+   * Explore different endpoints based on user roles
 
 ### Authentication Flow
-1. Register a new user account (default role: rider)
-2. Login with email and password to receive access and refresh tokens
-3. Use the access token in the Authorization header: `Authorization: Bearer <access_token>`
-4. When the access token expires, use the refresh token to get a new access token
+
+1. **Register** a new user account (default role: `rider`)
+2. **Login** with email and password to receive access and refresh tokens
+3. Use the **access token** in the `Authorization` header:
+
+   ```http
+   Authorization: <access_token>
+   ```
+4. When the **access token expires**, use the refresh token to request a new access token
+
+---
+
+### Setting Auth Cookies (`setAuthCookie` function)
+
+You can use a utility function `setAuthCookie(res, tokenInfo)` to manage cookies for storing `accessToken` and `refreshToken`. The implementation differs slightly between **production (e.g., Vercel)** and **development (localhost)** environments.
+
+#### ✅ Production (Vercel):
+
+```ts
+export const setAuthCookie = (res: Response, tokenInfo: AuthTokens) => {
+    if (tokenInfo.accessToken) {
+        res.cookie("accessToken", tokenInfo.accessToken, {
+            httpOnly: true,
+            secure: true,
+            sameSite: "none"
+        });
+    }
+
+    if (tokenInfo.refreshToken) {
+        res.cookie("refreshToken", tokenInfo.refreshToken, {
+            httpOnly: true,
+            secure: true,
+            sameSite: "none"
+        });
+    }
+}
+```
+
+#### 🧪 Localhost (Development):
+
+```ts
+export const setAuthCookie = (res: Response, tokenInfo: AuthTokens) => {
+    if (tokenInfo.accessToken) {
+        res.cookie("accessToken", tokenInfo.accessToken, {
+            httpOnly: true,
+            secure: false
+        });
+    }
+
+    if (tokenInfo.refreshToken) {
+        res.cookie("refreshToken", tokenInfo.refreshToken, {
+            httpOnly: true,
+            secure: false
+        });
+    }
+}
+```
 
 ## Project Structure
 
