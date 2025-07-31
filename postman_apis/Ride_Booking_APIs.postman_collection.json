@@ -1,0 +1,486 @@
+{
+	"info": {
+		"_postman_id": "0242b71a-3a42-49ea-9f21-46447dc599d6",
+		"name": "Ride Booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "45833979"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Alex Foe\",\n    \"email\": \"taylorq544@gmail.com\",\n    \"password\": \"Cityshare@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{B5A05}}/api/v1/user/register"
+					},
+					"response": []
+				},
+				{
+					"name": "all-users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhMDY5NWIxMTcyM2EyOTBlMjliYjQiLCJlbWFpbCI6ImFkbWluQGNpdHlzaGFyZS5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTM4ODc4NTEsImV4cCI6MTc1Mzk3NDI1MX0.O8kxC9WlMKwyivQvOi3CVt7MUs1zCJtOeDt8BXIuC6Q",
+								"type": "text"
+							}
+						],
+						"url": "{{B5A05}}/api/v1/user/all-users"
+					},
+					"response": []
+				},
+				{
+					"name": "get-me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhMDlmYjUwYmY4MWQ5OTVhMGYxMDQiLCJlbWFpbCI6InJvYmVydEBjaXR5c2hhcmUuY29tIiwicm9sZSI6InJpZGVyIiwiaWF0IjoxNzUzODc3MTkyLCJleHAiOjE3NTM5NjM1OTJ9.fnr7zQ71c2Nq-sQhtnWq0kyZVyPqi1OTp5dPNWWZj8k",
+								"type": "text"
+							}
+						],
+						"url": "{{B5A05}}/api/v1/user/me"
+					},
+					"response": []
+				},
+				{
+					"name": "single-user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODg3ZDVmNGRmYjRmNDdjYzljNTY0NWMiLCJlbWFpbCI6ImFkbWluQGNpdHlzaGFyZS5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTM3MzMxNDUsImV4cCI6MTc1MzgxOTU0NX0._8MF2wRFG_JGfFowLyCJsgheGFTFwxxoWiLLW7BcNIc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{B5A05}}/api/v1/user/6887d75990dd45d523d204a8"
+					},
+					"response": []
+				},
+				{
+					"name": "update-user",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhMDY5NWIxMTcyM2EyOTBlMjliYjQiLCJlbWFpbCI6ImFkbWluQGNpdHlzaGFyZS5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTM4Nzg0ODYsImV4cCI6MTc1Mzk2NDg4Nn0.kV_1ARDC1UL1s36Dcb9Xn33qHVxuwYNWfljyuGfCooY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role\": \"driver\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{B5A05}}/api/v1/user/688a09fb50bf81d995a0f104"
+					},
+					"response": []
+				},
+				{
+					"name": "reports",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhMDY5NWIxMTcyM2EyOTBlMjliYjQiLCJlbWFpbCI6ImFkbWluQGNpdHlzaGFyZS5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTM4ODIzNjEsImV4cCI6MTc1Mzk2ODc2MX0.N9JFc3rXVAABTjoS7LFAibo9-oPyAfdzPS7h_7odaqg",
+								"type": "text"
+							}
+						],
+						"url": "{{B5A05}}/api/v1/user/report"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODg3ZDVmNGRmYjRmNDdjYzljNTY0NWMiLCJlbWFpbCI6ImFkbWluQGNpdHlzaGFyZS5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTM4MTgyNDgsImV4cCI6MTc1MzkwNDY0OH0.uxtoI7Z_vpnrLj1qKwe7_IDI8ha0toGMzuNJhAVkoNk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@cityshare.com\",\n    \"password\": \"Cityshare@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{B5A05}}/api/v1/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{B5A05}}/api/v1/auth/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "access/refresh-token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@cityshare.com\",\n    \"password\": \"Cityshare@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{B5A05}}/api/v1/auth/refresh-token"
+					},
+					"response": []
+				},
+				{
+					"name": "change-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhMDkwOWIxMTcyM2EyOTBlMjliY2UiLCJlbWFpbCI6ImpvaG5AY2l0eXNoYXJlLmNvbSIsInJvbGUiOiJyaWRlciIsImlhdCI6MTc1Mzg4MjYxOSwiZXhwIjoxNzUzOTY5MDE5fQ.aT2OhsgtVNLhLd5arIR28nFDfzUBj81m3EsEOXM6aac",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\": \"Cityshare@123\",\n    \"newPassword\": \"Dhaka@54321$\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{B5A05}}/api/v1/auth/change-password"
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"taylorq544@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{B5A05}}/api/v1/auth/forgot-password"
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhMjJkMGI3MTViMzhkOTE5YzBmNGMiLCJlbWFpbCI6InRheWxvcnE1NDRAZ21haWwuY29tIiwicm9sZSI6InJpZGVyIiwiaWF0IjoxNzUzODgzNDQ5LCJleHAiOjE3NTM4ODQwNDl9.yUmXtmR7DVfDwL8zkx66sk1C7TIx9p2O-p-xhLbNTEE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"688a22d0b715b38d919c0f4c\",\n    \"newPassword\": \"Dhaka@54321$\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{B5A05}}/api/v1/auth/reset-password"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ride",
+			"item": [
+				{
+					"name": "ride-request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhMDkwOWIxMTcyM2EyOTBlMjliY2UiLCJlbWFpbCI6ImpvaG5AY2l0eXNoYXJlLmNvbSIsInJvbGUiOiJyaWRlciIsImlhdCI6MTc1Mzg3OTIzMywiZXhwIjoxNzUzOTY1NjMzfQ.q39pTsxjJJU9TE6MQUqwdY-K4kXs5mQDi43LfUN2GCA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"pickupLocation\": {\n    \"lat\": 23.793540,\n    \"lng\": 90.404478,\n    \"address\": \"Motijheel, Dhaka\"\n  },\n  \"destinationLocation\": {\n    \"lat\": 23.806018,\n    \"lng\": 90.365417,\n    \"address\": \"Uttara, Dhaka\"\n  }\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{B5A05}}/api/v1/ride/request"
+					},
+					"response": []
+				},
+				{
+					"name": "ride-history",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhMGM4NDUwYmY4MWQ5OTVhMGYxMTUiLCJlbWFpbCI6ImFsZXhAY2l0eXNoYXJlLmNvbSIsInJvbGUiOiJyaWRlciIsImlhdCI6MTc1Mzg3Nzc4MSwiZXhwIjoxNzUzOTY0MTgxfQ.IWZM90sGV1etujUdKtZjryZ55e3mquKwy3KVEoGKP98",
+								"type": "text"
+							}
+						],
+						"url": "{{B5A05}}/api/v1/ride/history"
+					},
+					"response": []
+				},
+				{
+					"name": "ride-cancel",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhMGM4NDUwYmY4MWQ5OTVhMGYxMTUiLCJlbWFpbCI6ImFsZXhAY2l0eXNoYXJlLmNvbSIsInJvbGUiOiJyaWRlciIsImlhdCI6MTc1Mzg3Nzc4MSwiZXhwIjoxNzUzOTY0MTgxfQ.IWZM90sGV1etujUdKtZjryZ55e3mquKwy3KVEoGKP98",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{B5A05}}/api/v1/ride/cancel/688a0d6b50bf81d995a0f11f"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "driver",
+			"item": [
+				{
+					"name": "availability",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhMDlmYjUwYmY4MWQ5OTVhMGYxMDQiLCJlbWFpbCI6InJvYmVydEBjaXR5c2hhcmUuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzg3ODgzNiwiZXhwIjoxNzUzOTY1MjM2fQ.BhD55LSagIvg6Mw-CqvdRBL2DUKHCQL1Yj7ixNxwHZU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"isOnline\": true\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{B5A05}}/api/v1/driver/availability"
+					},
+					"response": []
+				},
+				{
+					"name": "respond",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhMDlmYjUwYmY4MWQ5OTVhMGYxMDQiLCJlbWFpbCI6InJvYmVydEBjaXR5c2hhcmUuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzg3ODgzNiwiZXhwIjoxNzUzOTY1MjM2fQ.BhD55LSagIvg6Mw-CqvdRBL2DUKHCQL1Yj7ixNxwHZU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"rideId\": \"688a0f0350bf81d995a0f12f\",\n  \"action\": \"accept\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{B5A05}}/api/v1/driver/ride/respond"
+					},
+					"response": []
+				},
+				{
+					"name": "status",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhMDlmYjUwYmY4MWQ5OTVhMGYxMDQiLCJlbWFpbCI6InJvYmVydEBjaXR5c2hhcmUuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzg3OTcwMCwiZXhwIjoxNzUzOTY2MTAwfQ.65YVj7K2_N4SW8zh98yPnx8LJS3e8o0AvyQNSa2YEY0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"rideId\": \"688a0f0350bf81d995a0f12f\",\n  \"status\": \"completed\",\n  \"amount\": 500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{B5A05}}/api/v1/driver/ride/status"
+					},
+					"response": []
+				},
+				{
+					"name": "earnings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhMDlmYjUwYmY4MWQ5OTVhMGYxMDQiLCJlbWFpbCI6InJvYmVydEBjaXR5c2hhcmUuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzg3OTcwMCwiZXhwIjoxNzUzOTY2MTAwfQ.65YVj7K2_N4SW8zh98yPnx8LJS3e8o0AvyQNSa2YEY0",
+								"type": "text"
+							}
+						],
+						"url": "{{B5A05}}/api/v1/driver/earnings"
+					},
+					"response": []
+				},
+				{
+					"name": "update-driver",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhMDlmYjUwYmY4MWQ5OTVhMGYxMDQiLCJlbWFpbCI6InJvYmVydEBjaXR5c2hhcmUuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzg3ODgzNiwiZXhwIjoxNzUzOTY1MjM2fQ.BhD55LSagIvg6Mw-CqvdRBL2DUKHCQL1Yj7ixNxwHZU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"make\": \"Toyota\",\n    \"model\": \"Corolla\",\n    \"year\": 2018,\n    \"licensePlate\": \"ABC-1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{B5A05}}/api/v1/driver/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "available-rides",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhhMDlmYjUwYmY4MWQ5OTVhMGYxMDQiLCJlbWFpbCI6InJvYmVydEBjaXR5c2hhcmUuY29tIiwicm9sZSI6ImRyaXZlciIsImlhdCI6MTc1Mzg3OTcwMCwiZXhwIjoxNzUzOTY2MTAwfQ.65YVj7K2_N4SW8zh98yPnx8LJS3e8o0AvyQNSa2YEY0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"pickupLocation\": {\n    \"lat\": 23.793540,\n    \"lng\": 90.404478,\n    \"address\": \"Gulshan, Dhaka\"\n  },\n  \"destinationLocation\": {\n    \"lat\": 23.806018,\n    \"lng\": 90.365417,\n    \"address\": \"Banani, Dhaka\"\n  }\n}\n\n"
+						},
+						"url": "{{B5A05}}/api/v1/driver/available-rides"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "B5A05",
+			"value": "https://scalable-ride-sharing-booking-syste.vercel.app",
+			"type": "default"
+		}
+	]
+}
